@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Year full of Memories — Happy Anniversary Aishika ❤️</title>
+
+<!-- Optional Google fonts. The page still works if they don't load. -->
+<link rel="preconnect" href="
+">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --paper:#f7ddd3;
+  --paper2:#f3d4ca;
+  --ink:#171313;
+  --accent:#b72f4b;
+  --soft:#dcaeb0;
+  --shadow:rgba(74,35,35,.25);
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.32), transparent 30%),
+    radial-gradient(circle at 80% 75%, rgba(180,100,100,.08), transparent 28%),
+    #e9c8c0;
+  color:var(--ink);
+  overflow:hidden;
+  font-family:"Cormorant Garamond", Georgia, serif;
+}
+
+/* ---------------- COVER ---------------- */
+
+#cover{
+  position:fixed;
+  inset:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,.35), transparent 28%),
+    linear-gradient(135deg,#f6ddd5,#eecbc4);
+  transition:opacity .8s ease, visibility .8s ease;
+}
+
+#cover.hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.cover-paper{
+  width:min(720px,88vw);
+  min-height:78vh;
+  padding:70px 45px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:rgba(250,229,221,.94);
+  border:1px solid rgba(110,50,50,.16);
+  box-shadow:0 25px 70px rgba(80,35,35,.25);
+  position:relative;
+}
+
+.cover-paper:before,
+.cover-paper:after{
+  content:"";
+  position:absolute;
+  inset:16px;
+  border:1px solid rgba(150,75,75,.2);
+  pointer-events:none;
+}
+
+.cover-heart{
+  font-size:46px;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+.cover-paper h1{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(60px,9vw,105px);
+  font-weight:400;
+  line-height:.95;
+  margin-bottom:20px;
+}
+
+.cover-paper h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(24px,4vw,38px);
+  font-weight:600;
+  letter-spacing:2px;
+}
+
+.cover-paper p{
+  margin-top:22px;
+  font-size:19px;
+  max-width:470px;
+  line-height:1.5;
+}
+
+.open-btn{
+  margin-top:40px;
+  border:0;
+  background:var(--accent);
+  color:white;
+  padding:14px 32px;
+  font:600 17px "Cormorant Garamond",serif;
+  letter-spacing:1px;
+  cursor:pointer;
+  border-radius:2px;
+  box-shadow:0 8px 20px rgba(120,30,50,.22);
+  transition:transform .2s, box-shadow .2s;
+}
+
+.open-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 11px 24px rgba(120,30,50,.28);
+}
+
+/* ---------------- BOOK ---------------- */
+
+#book-area{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:2200px;
+  padding:35px;
+}
+
+.book{
+  width:min(1240px,94vw);
+  height:min(690px,88vh);
+  position:relative;
+  transform-style:preserve-3d;
+}
+
+/*
+  Every month is one full "paper". We flip the current sheet around
+  its left edge, giving the feeling of turning a diary page.
+*/
+.page{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,.28), transparent 27%),
+    linear-gradient(115deg,rgba(255,255,255,.18),transparent 35%),
+    var(--paper);
+  border:1px solid rgba(100,45,45,.12);
+  box-shadow:0 16px 40px var(--shadow);
+  transform-origin:left center;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform-style:preserve-3d;
+  transition:transform 1.05s cubic-bezier(.72,0,.2,1), box-shadow 1.05s;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:48% 52%;
+}
+
+.page.flipped{
+  transform:rotateY(-180deg);
+  box-shadow:-15px 16px 35px rgba(70,30,30,.15);
+}
+
+.page:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.15;
+  pointer-events:none;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 4px, rgba(80,40,40,.025) 5px),
+    repeating-linear-gradient(90deg, transparent 0 5px, rgba(80,40,40,.02) 6px);
+}
+
+/* LEFT PHOTO AREA */
+
+.photo-side{
+  padding:62px 45px 38px 55px;
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:22px 35px;
+  align-items:center;
+}
+
+.month-title{
+  position:absolute;
+  top:14px;
+  left:45px;
+  z-index:5;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:clamp(28px,3.2vw,44px);
+  font-style:normal;
+  font-weight:700;
+  letter-spacing:1px;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:7px;
+}
+
+.polaroid{
+  width:100%;
+  max-width:230px;
+  aspect-ratio:.82;
+  background:#fdfaf5;
+  padding:10px 10px 35px;
+  box-shadow:0 5px 13px rgba(70,35,35,.25);
+  border:1px solid rgba(70,35,35,.1);
+  justify-self:center;
+  position:relative;
+  transition:transform .25s;
+}
+
+.polaroid:nth-child(2){transform:rotate(1.5deg); margin-top:55px}
+.polaroid:nth-child(3){transform:rotate(-1deg)}
+.polaroid:nth-child(4){transform:rotate(1deg); margin-top:-5px}
+
+.polaroid:hover{
+  transform:rotate(0) scale(1.025);
+  z-index:10;
+}
+
+.polaroid img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  cursor:zoom-in;
+  background:#f4e9e3;
+}
+
+.polaroid video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  background:#f4e9e3;
+}
+
+.photo-viewer{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  background:rgba(20,12,14,.88);
+  cursor:zoom-out;
+}
+
+.photo-viewer.open{display:flex}
+
+.photo-viewer img{
+  display:block;
+  max-width:min(100%,1100px);
+  max-height:calc(100vh - 64px);
+  object-fit:contain;
+  box-shadow:0 15px 50px rgba(0,0,0,.45);
+  cursor:default;
+}
+
+.photo-viewer-close{
+  position:absolute;
+  top:16px;
+  right:20px;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  color:white;
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.polaroid .placeholder{
+  width:100%;
+  height:100%;
+  min-height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:#777;
+  background:linear-gradient(180deg,#c8eafa 0 50%,#a5c57b 50% 70%,#789b16 70%);
+  font-size:16px;
+}
+
+/* RIGHT JOURNAL AREA */
+
+.story-side{
+  padding:72px 45px 40px 18px;
+  position:relative;
+  z-index:3;
+  overflow:hidden;
+}
+
+.story{
+  height:100%;
+  overflow:auto;
+  padding-right:8px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:14px;
+  line-height:1.22;
+}
+
+.story::-webkit-scrollbar{width:4px}
+.story::-webkit-scrollbar-thumb{background:#bd8c8e;border-radius:10px}
+
+.entry{
+  margin-bottom:8px;
+}
+
+.entry strong{
+  display:block;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  margin-bottom:1px;
+}
+
+.entry p{
+  margin:0;
+}
+
+.bottom-line{
+  position:absolute;
+  right:45px;
+  bottom:21px;
+  font-weight:700;
+  font-size:17px;
+  text-align:right;
+  max-width:80%;
+}
+
+.bottom-heart{
+  color:var(--accent);
+  font-size:35px;
+  margin-left:8px;
+  display:inline-block;
+  transform:rotate(-15deg);
+}
+
+/* NAVIGATION */
+
+.controls{
+  position:fixed;
+  left:50%;
+  bottom:16px;
+  transform:translateX(-50%);
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(249,226,218,.88);
+  backdrop-filter:blur(8px);
+  padding:8px 12px;
+  border:1px solid rgba(100,45,45,.15);
+  box-shadow:0 5px 20px rgba(60,30,30,.16);
+  border-radius:30px;
+}
+
+.nav-btn{
+  width:42px;
+  height:36px;
+  border:0;
+  border-radius:20px;
+  background:#b94a61;
+  color:white;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.nav-btn:disabled{
+  opacity:.35;
+  cursor:not-allowed;
+}
+
+.page-counter{
+  min-width:110px;
+  text-align:center;
+  font:600 15px Georgia,serif;
+  color:#5b3136;
+}
+
+.hint{
+  position:fixed;
+  top:15px;
+  right:22px;
+  z-index:101;
+  font:14px Georgia,serif;
+  color:#70434a;
+  background:rgba(250,231,224,.78);
+  padding:8px 12px;
+  border-radius:20px;
+}
+
+/* END PAGE */
+
+.end-page{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  grid-template-columns:1fr;
+}
+
+.end-content{
+  max-width:650px;
+  padding:40px;
+}
+
+.end-content .small{
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:14px;
+}
+
+.end-content h2{
+  font-family:"Great Vibes",cursive;
+  font-size:90px;
+  font-weight:400;
+  margin:10px 0;
+}
+
+.end-content p{
+  font-size:21px;
+  line-height:1.6;
+}
+
+@media(max-width:850px){
+  body{overflow:auto}
+
+  #book-area{
+    height:auto;
+    min-height:100vh;
+    padding:70px 12px 80px;
+  }
+
+  .book{
+    width:96vw;
+    height:78vh;
+    min-height:580px;
+  }
+
+  .page{
+    grid-template-columns:44% 56%;
+  }
+
+  .photo-side{
+    padding:58px 18px 28px;
+    gap:14px;
+  }
+
+  .month-title{
+    left:20px;
+    font-size:36px;
+  }
+
+  .story-side{
+    padding:65px 20px 35px 8px;
+  }
+
+  .story{font-size:12px}
+  .entry strong{font-size:13px}
+  .bottom-line{right:18px;font-size:14px}
+}
+
+@media(max-width:600px){
+  .book{
+    height:82vh;
+    min-height:650px;
+  }
+
+  .page{
+    display:block;
+    overflow-y:auto;
+  }
+
+  .photo-side{
+    height:47%;
+    min-height:270px;
+    padding:66px 25px 10px;
+  }
+
+  .polaroid{
+    max-width:145px;
+    padding:6px 6px 22px;
+  }
+
+  .story-side{
+    height:53%;
+    padding:10px 25px 55px;
+  }
+
+  .story{
+    font-size:12px;
+    line-height:1.18;
+  }
+
+  .bottom-line{
+    bottom:8px;
+    right:20px;
+  }
+
+  .hint{display:none}
+}
+
+/* Reduced-motion accessibility */
+@media(prefers-reduced-motion:reduce){
+  .page{transition:none}
+  #cover{transition:none}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="background-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-paper">
+    <div class="cover-heart"></div>
+    <h1>Love Story</h1>
+    <h2>Happy Anniversary Aishika ❤️</h2>
+    <p>
+      One year. Hundreds of memories. A thousand little moments.
+      And a story that still isn't finished.
+    </p>
+    <button class="open-btn" onclick="openBook()"> Lets go back to October </button>
+  </div>
+</section>
+
+<!-- BOOK -->
+<main id="book-area">
+  <div class="book" id="book">
+
+    <!-- October -->
+    <section class="page" data-month="October">
+      <div class="photo-side">
+        <div class="polaroid"><img src="october1.jpg" alt="October memory 1"></div>
+        <div class="polaroid"><img src="october2.jpg" alt="October memory 2"></div>
+        <div class="polaroid"><video controls playsinline preload="metadata" aria-label="October memory video"><source src="october-video.mp4" type="video/mp4">Your browser does not support video playback.</video></div>
+      </div>
+
+      <div class="story-side">
+        <div class="story">
+          <div class="entry">
+            <strong>October 2025</strong>
+            <p> October 13,2025: <br>
+              A day which i will never forget in my life. The day i took the best decision of my life by confessing to you.I already had a crush on you from the first day but from that day i fell in complete love with you. After proposing you we started to have good convos. You even used to text me from school on some days. We used to share a lot of things about each other because we barely knew each other at that time.<br>
+              October 14, 2025: <br>  The first online class we had with sir. We told sir about our relationship on that day. He was sooo shocked I still remember his reaction. That after class meeting we had that day is so memorable. <br>
+              October 23,2025: <br> It was the first time we talked over call. I also received my first kiss voice at that time. We also started to send kissy videos to each other. I still remember the after school calls we used to have. You used to be in bus and call me. <br>
+            </p>
+          </div>
+          <div class="entry">
+            <strong> The first smile</strong>
+            <p>Oh what can i say about the first convo's we had, the first time you made me smile. You always looked so cute and adorable in the photos.</p>
+          </div>
+          <div class="entry">
+            <strong>The beginning</strong>
+            <p> One of the best decisions of my life was being able to get a partner like you Aishika. I love you a lot. <br> <br> <strong>We fell in love in October thats why i love fall... </strong>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVEMBER -->
+    <section class="page" data-month="November">
+      <div class="photo-side">
+        <div class="polaroid"><img src="november1.jpg" alt="November memory 1"></div>
+        <div class="polaroid"><img src="november2.jpg" alt="November memory 2"></div>
+        <div class="polaroid"><img src="november3.jpg" alt="November memory 3"></div>
+        <div class="polaroid"><img src="november4.jpg" alt="November memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>November 2025</strong><p>November 11,2025: <br>
+          We exchanged some kissy videos. You looked soo soo cute in the videos, omgg..Mmmwaahhh. We also had an online class on that day . I got to see you that day. <br>
+          November 13,2025: <br>
+          One month completed of our relationship. I had put up a note to celebrate the date. Yes i didn't write a note that month, I started to write notes from our second month. <br>
+          November 17,2025: <br>
+          I received a voice message from you, One of the first voice messages i got from you. At that time, a guy in your tuition had a crush on you. Thats why i was feeling uneasy so you gave me a voice message to comfort me. So caring you are, mmmwahhh. <br>
+          November 27,2025: <br>
+          This was the day when we met for the second time and first time as lovers. The plan on 25th got cancelled due to that arse driver. But we finally met on 27th . It was so nice to see you after such a long time although it was my second time meeting you but it was special. I was so tensed that i couldn’t even talk or smile properly. You gave me four gifts that day. A handmade card, the hairband, a love bite cake and the best gift a cheek kiss. <br>
+          November 28,2025 <br>
+          I was so tensed last day that i couldn't properly talk to you. Thus i again went on 28th. This time i asked if i could hug you. And then we hugged. My life's first good hug. I again got a cheek kiss. <br>
+          <br> <br> <strong>And thats how the entire november ended... </strong>
+          </p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECEMBER -->
+    <section class="page" data-month="December">
+      <div class="photo-side">
+        <div class="polaroid"><img src="december1.jpg" alt="December memory 1"></div>
+        <div class="polaroid"><img src="december2.jpg" alt="December memory 2"></div>
+        <div class="polaroid"><img src="december3.jpg" alt="December memory 3"></div>
+        <div class="polaroid"><img src="december4.jpg" alt="December memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>December 2025</strong><p>December 4 ,2025 <br>
+          The first date we had. We went to happy dukan to buy a gift for your Rishika's birthday. We had planned to eat momos but we weren't able to. You bought me a harry potter keychain.It was nice seeing you again. <br>
+          December 6,2025 <br>
+          Our first actual momo date. I was so happy and excited that day. We met at rohit momos and had fried momos, We even clicked some beautiful pics of you feeding me momos. Then we did that hand intertwined photo pose. I gave some of the photos in my story on that day. I was so happyy to see you and eat momos with you. <br>
+          December 13 2025 <br>
+          Our third month anniversary, This time i wrote a long paragraph for my rasmalaiii, I wrote about all my feelings and how much you actually care to me. You felt happy reading that and were also a bit shocked because you didnt expect that. <br>
+          December 24,2025 <br>   
+          We played a flirty game that day. We were asking very dark questions to each other, To be honest it was fun to play beacuse we both got to know each other. That was the best christmas eve i have spent. Talking to you made me so happyyy. <br>
+          Thats how the last month of 2025 also ended..</p></div>
+          <div class="entry"><strong></strong><p></p></div>
+          <div class="entry"><strong>Before the new year <br> </strong><p>I still remember i wrote about you and how you make me feel on the last two pages of my diary. <br> <br> <br> <strong>Our first year was only getting started...</strong>  </p></div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- JANUARY -->
+    <section class="page" data-month="January">
+      <div class="photo-side">
+        <div class="polaroid"><img src="january1.jpg" alt="January memory 1"></div>
+        <div class="polaroid"><img src="january2.jpg" alt="January memory 2"></div>
+        <div class="polaroid"><img src="january3.jpg" alt="January memory 3"></div>
+        <div class="polaroid"><img src="january4.jpg" alt="January memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>January 2026</strong></div>
+          <p> January 1,2026: <br>
+          New year started with a complete banger day.<br>
+          It was such a nice and complete day. So at 12 am, I sent her the passage that i had written for new years, She also sent me a passage that she had written for me. It was such a nice and emotional passage, Then in the morning I went for mock exam. In the evening we met for a momo date. It was so nice meeting her again and spending the new year with her. That day i got a very beautiful gift that almost kept me in shock for a few moments. She gave me a lip kiss..Ughhh my first lip kissss...Mmmwaahhhhh I also clicked some candid pic of hers and in the happy dukan she liked a pencil which i later buy..Hehe <br>
+          January 3,2026: <br>
+          The heist day. So she liked a pencil box on new years and she wanted it very muchh. So on the next day i had a though of  buying the pencil box for her. So on 3rd i made a plan to sneak out and buy the pencil box if it was still there. I was praying so much for the pencil box to be there. When i went to the store it was there. I would keep this a secret from her till 7th.. <br>
+          January 13,2026: <br>
+          3 months completed. I had  bio exam on that day and you had a school trip. I wrote the passage at 12 am. You didn't expect something like that  but i surprised you. That was a nice day because i got to see you in video call and we got to talk to each other. I was so happy that day because i got to see youuuu. <br>
+          January 17,2026: <br>
+          We again went on a date. This time we had burger for mio amore. We spent a lot of time together, talking, holding hands. I even hugged her that day. That side hugs she did was so heartwarming ughhh. We even clicked some photos and then came back. We weren't able to kiss because of the overcrowded people. <br>
+          January 21,2026: <br>
+          You had intrusive thoughts about how other girls look better than you and i deserve better. I obviously comforted you and lemme tell you again i chose you for a reason. I have completely fallen for you and got so emotionally attached that i don't even get the urge to look at other girls, talking to is far away. <br>
+          January 23,2026: <br>
+          The saraswati puja day. Omg you slayed so hard that day in that white saree.. Ughhh you look so cute and many more in saree...I get the feeling to tightly hug and kiss you. That day you absolutely killed me with the saree looks. How can somebody look so good in saree.... I made two ai pictures. Both of them felt a bit real. I have saved them. <br>
+          January 28 & 29: <br>
+          You showed me some pages of your diary. October 5th when you first wrote about me and how you liked me. I even got to know about your past and things that only i know till date because you cant tell those to other people and i respect that and will always hide it. <br>
+          <br>
+          <strong>Thats how the first month of the year went..</strong>
+          </p>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- FEBRUARY -->
+    <section class="page" data-month="February">
+      <div class="photo-side">
+        <div class="polaroid"><img src="february1.jpg" alt="February memory 1"></div>
+        <div class="polaroid"><img src="february2.jpg" alt="February memory 2"></div>
+        <div class="polaroid"><img src="february3.jpg" alt="February memory 3"></div>
+        <div class="polaroid"><img src="february4.jpg" alt="February memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>February 2026</strong><p>February 7, 2026:<br>
+           Fourth date.It was a nice day tbh. So we met that day at 8pm near Rohit momos.Then we went to the chicken shop and had a chicken burger. That day I took my mom's phone that day, so we clicked a few good pics. Then we walked a bit. I hugged you tightly and for the first time I kissed you on the neck. We had momos that day, and enjoyed a lot spending time with each other.<br>
+           February 13, 2026 : <br> Our 4 months. We talked a lot through voice notes on this day. It was so nice to hear your voice. Your voice is so cute. I was a bit sick but you healed me completely by staying by me. I have kept all the messages with me, I again got to see you today. You looked so cute yaar. Khey nebo puroo. You are so loveable and cute. My wifeyy.<br>
+           February 14, 2026 : <br> This day was also another great day. Happy Valentine's Day to you Gubluu. You again woke me up from sleep today. I got to hear your voice again, the way you say “Happy Valentine's Day Baby” is so cute yarrr. Such a cute baby you are. In the evening, we uploaded the Valentine's Day post. Everyone was very happy to see the post. Ohh btw, you read the love letter I had written to you a few days ago. You also recorded voice messages while reading the letter, and also gave your reactions to it. <br>
+           <strong>Then our boards started so nothing more interesting took place. We just talked over texts only.</strong></p></div>
+        </div>
+      </div>
+    </section>
+    <!-- MARCH -->
+    <section class="page" data-month="March">
+      <div class="photo-side">
+        <div class="polaroid"><img src="march1.jpg" alt="March memory 1"></div>
+        <div class="polaroid"><img src="march2.jpg" alt="March memory 2"></div>
+        <div class="polaroid"><img src="march3.jpg" alt="March memory 3"></div>
+        <div class="polaroid"><img src="march4.jpg" alt="March memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>March 2026</strong><p>2nd March, 2026:<br> I got Chickenpox. I was a bit weak. We both had maths exam on this day. I got to see you again. Darling you look cute in every pic. I was so happy to see you. My cutie rasmalai. Mmmwahhh.<br>
+          7th March,2026:<br> A tough day, our first actual fight. We fought like anything that day but somehow amidst this fight, we got to know each other better, what the other shouldn't do. For me this day would always be a lesson. I learned a lot of things that day that helped me to be a better guy. I was sad, you were sad but we stayed close to each other as we truly love each other the most.<br>
+          12th March, 2026:<br> It was between our board exams. We had bio on 13th. We talked a bit in the morning, not a lot but yeah. I got to see you thrice. I kissed my screen so many times, you look so cute yaar	. In the evening we studied bio as it had a lot of syllabus.<br>
+          13th March, 2026:<br> Our 5th month anniversary which unfortunately fell on Bio exam's date. Nothing much happened on this day as we both were busy studying so just normal talks and all.<br>
+          23rd March, 2026:<br> The plan we made got cancelled as your parents denied. But the most happy thing is that, we got to meet the same day.  So the day was so great First I went to sirs tuition to meet him. We both talked to sire and then went out. So we walked a lot that day because no shop was open due to the LPG Crisis. <br>
+          We talked a lot that day. Then we went to Mio Amore and bought chicken claws. We had that while standing near my scooty. Then we again roamed and clicked a few aesthetic pics.  It was soo nice to walk holding your hands. We even hugged that day and I got a cheek kiss. Even I kissed you also that day. At last we had momos from quality and went home.<br>
+          26th March, 2026:<br> I had planned to go to the sirs house to collect a game. We had thought of meeting for the last time before my long trip. Unfortunately it got cancelled at the very last moment as your health wasn't good. But I didn't feel sad because obviously your health is my number one priority over everything. The most important thing for me is to ensure that you are healthy.<br>
+          <strong> Thats how the boards month ended...</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APRIL -->
+    <section class="page" data-month="April">
+      <div class="photo-side">
+        <div class="polaroid"><img src="april1.jpg" alt="April memory 1"></div>
+        <div class="polaroid"><img src="april2.jpg" alt="April memory 2"></div>
+        <div class="polaroid"><img src="april3.jpg" alt="April memory 3"></div>
+        <div class="polaroid"><img src="april4.jpg" alt="April memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>April 2026</strong><p>During my Bangalore trip we faced a lot of emotions, sadness, happiness, and clinginess. I missed you a lot during these ten days.  But this trip was very adventurous as I bought so many gifts for you without letting my mom know.  I bought chocolates, eraser, lipbalm, bracelet, ring, Jhumka. and a lot more. During the trip we couldn't talk a lot on certain days as you were busy and somedays I was sick. <br>
+          8th April,2026:<br> It was sooo gooodddd It's still replays in my mind. So in the morning, I woke up at 7 to see off. It was your first day in class 11.  In the morning we didn't have any convo because obv you were in school.  In the evening I was worried abt you as you didn't reply to my texts for a long time. You finally came back at 6:15pm. Then after some rest you went to tuition. I reached tuition at 8pm.  It was raining so much, I was thinking my mom won't allow but somehow I went because I wanted to go so badlyyy. So the tuition was nice. Yes the kids were annoying but I spent such a good time talking to you. I even interacted a bit with sir also. You know I noticed some thing you did as an relfex. You held my forearm tightly when someone asked me to move.  I felt that, I felt lovee. You even showed the gifts to sire. I am happy that you liked the chocolate and the fridge magnet and all the gifts. Another thing I remember, You hit me on my leg. Obviously it didnt hurt but it was sooo cuteee. The thing you say as bullying feels so cutee to mee. This goofy, energetic side of yours is veryyy cuteee. Then while returning,  I put the ring on your left ring finger. Then we hugged again. The hug was so heartwarming. I didn't want to leave you and just stay like that for a long time.  It felt so loving and warm. It made my day. Then we again kissed. I got a hint of the lip balm, not a strong one but a slight taste.<br>
+          13th April, 2026:<br> I had written you a very long heartfelt message. In the evening, we went to tuition. At first, you studied while I was playing uno with friends. At 9:15 pm, we went to Chicken Singh to celebrate. We had chicken strips on that day. Then we roamed around while drinking the Schwepps I bought from Bangalore. You also gave me a gift, a gift from Shantiniketan. I got to hug you again and this time I kissed you again. Celebrations spent well.<br>
+          <strong>Thats how april went, to be honest it was a great month.</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAY -->
+    <section class="page" data-month="May">
+      <div class="photo-side">
+        <div class="polaroid"><img src="may1.jpg" alt="May memory 1"></div>
+        <div class="polaroid"><img src="may2.jpg" alt="May memory 2"></div>
+        <div class="polaroid"><img src="may3.jpg" alt="May memory 3"></div>
+        <div class="polaroid"><img src="may4.jpg" alt="May memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>May 2026</strong><p> 17th May,2026:<br> We got back on this day. It was a great day tbh.<br>
+              18th May,2026:<br> We again went to chicken singh to eat something because you were hungry. This was the first day when we declared in tution that yes we are dating, since the last 6 months. We kissed again.<br>
+             23rd May,2026:<br> We went to the chicken shop again. We had a chicken burger and a coke. We talked, chilled and had fun.<br>
+             <strong>So thats how our 8th month went...</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JUNE -->
+    <section class="page" data-month="June">
+      <div class="photo-side">
+        <div class="polaroid"><img src="june1.jpg" alt="June memory 1"></div>
+        <div class="polaroid"><img src="june2.jpg" alt="June memory 2"></div>
+        <div class="polaroid"><img src="june3.jpg" alt="June memory 3"></div>
+        <div class="polaroid"><img src="june4.jpg" alt="June memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>June 2026</strong><p>1st June,2026: <br>A great day. You finally came back from your village home We were meeting exactly after 8 long dayss. It was so nice to see you in person after such a long time. You were so happy to see me that you kept on kissing me whenever we got chance. We talked a lot. You played with my hair.  Then we had momos. You fed me momos and i also fed you. <br>
+          3rd June, 2026:<br> It was such a great day yarr. Like we had the perfect situation and it was executed so properly. This was the first time we actually kissed each other. Like we had a proper makeout session today. It was so good. So thankfully the tuiton was empty on this day. After sir went out of the room, whatever happened will always be memorable to me. I started kissing you and then we started kissing each other. I started sucking your neck and i was eventually able to give you a hickey. It fel really nice tbh. I know you said that you had a lot of sweat on your neck but tbh in that heated moment nothing really mattered to me. I wish we get more oppurtunities like that.<br>
+          10th June,2026:<br> I became a bit touchy today. Tbh i felt really nice doing that. Even you enjoyed, thats what i always want. I want you to enjoy and be happy. Whatever we did was a bit risky but it was nice. <br>
+          15th June, 2026:<br> It was a great day tbh. This was the day when i had to break my interface plan to you cause you werent going to go. Rito's friend also revealed to you that he was looking for two tickets. We met in the evening at tuition. You were clingy and hungry. You were so clingy that you hugged me tightly. Then we had momos. I kissed you once.<br>
+          18th June 2026:<br> Probably one of the best days of the month. It was a pure rollercoaster. I mean a lot of emotions in a blink of time. We had an argument and then something really special happened between us. We met at tution. Then we went out to eat momos. While having momos, the dog incident again happened. You were angry at me. Then we came back and talked a bit. Then we were left alone you came closer to me. Then what happened, I'll always remember. We even kissed before returning.<br>
+          20th June,2026:<br> The Interface day. Well it was fun but it didnt go as planned. I had thought a lot but nothing really happened in the end. We had to stand the entire concert separately. Then we had chicken rolls and then me and rito bought you a cup. I was really depressed for days after that. You comforted me while coming back.  It wasn't a great day but a memorable one. It was my first concert.<br>
+          24th June,2026:<br> Gift day. This is the day when you gave me the gifts. My birthday gifts. Tbh i was really happy to receive the gifts. You gave me my favourite book: The Trials of Apollo, two bookmarks, a pencil bag, a pringles can and a coffee can. It was really wholesome to read the letter written by you. Like it was really great. Your first handwritten letter for me. I felt very happy reading it. Our last tuition before exams.<br>
+          27th June,2026:<br> Photobooth Date. It was one of the best days of the year. It did have a bit of chaos but that is life. We really enjoyed that day. So the morning was fine nothing really happened. In the evening, i left for sir's at 5:50 pm. We left tuition by 6:10pm. At first we went to Koja Kolkata, the photobooth store. We did our photobooth. It was really nice. You looked so cute in the props. We kissed once in the booth. Then we went to have dominos. We had the cheese lava pizza. It was nice. We recorded a mukbang video. Then we came back home thankfully in time. Then we had the english exam also, it was hectic. I still remember the day very clearly. The best birthday gift i got.<br><strong>Thats how the best month went by..</strong> </p></div>
+        </div>
+      </div>
+    </section>
+    <!-- JULY -->
+    <section class="page" data-month="July">
+      <div class="photo-side">
+        <div class="polaroid"><img src="july1.jpg" alt="July memory 1"></div>
+        <div class="polaroid"><img src="july2.jpg" alt="July memory 2"></div>
+        <div class="polaroid"><img src="july3.jpg" alt="July memory 3"></div>
+        <div class="polaroid"><img src="july4.jpg" alt="July memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>July 2026</strong><p>One of the spiciest months. We did a lot of stuff this month.<br> 
+          20th July,2026:<br>  So u were really clingy towards me on this day. U came close to me and hugged me. I kissed you on the cheek and neck. I again got the feel, smell of your hair and taste of your lips. While coming back we again kissed in that dark alley and i again kissed u on the neck.<br> 
+          22nd July,2026:<br>  This is the first day of the best two days of the months. We both were really happy that day. So we again were alone in the tuition that day. So we had maths tuition ofc on that day, So while we were alone, i started to kiss u on the neck. This was the first day when i heard u moan.<br> 
+          29th July,2026:<br>  Probably the best day of the month and also my life till day. . Like that day was really too much. We were again left alone ofc but this time it was for a really long time tbh. So at first as usual i started kissing on the neck and then we did two wild things. It was such a perfect makeout that day.<br> <strong>Both our birthday's on the same month, spent really well..</strong></strong>  </p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUGUST -->
+    <section class="page" data-month="August">
+      <div class="photo-side">
+        <div class="polaroid"><img src="august1.jpg" alt="August memory 1"></div>
+        <div class="polaroid"><img src="august2.jpg" alt="August memory 2"></div>
+        <div class="polaroid"><img src="august3.jpg" alt="August memory 3"></div>
+        <div class="polaroid"><img src="august4.jpg" alt="August memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>August 2026</strong><p>1st August,2026 :<br> It was National Girlfriend's Day. I went to see Spiderman BND. I also bought a scrunchie and a hairband for you. I made a collage specially for you, wishing you “Happy Girlfriend's Day” and posted it as a story. In the evening we met again. I gave you the gift i bought for you. Then we again spent some time and enjoyed.<br>
+          3rd August,2026:<br> We both opened the kinderjoy's. I got Harry, and hermione. You got Ron in quiditch uniform and hermione. That was the day.<br>
+          10th August,2026:<br> We had a comforting day. I comforted you because you were sad about things your friends had said to you. I hugged you and you slept in my arms. Then i kissed you the cheeks.<br>
+          12th August,2026:<br> We again went to chicken singh to buy food. This time we had chicken popcorn and burger. This day is also memorable because this was the first day when i gave you a hickey.<br>
+          14th August,2026:<br> A good dayout. We went to our chemistry tuiton at Gariahat. You were in school uniform and i was in normal clothes. I carried your back, we clicked few pics. Then we gave the chem exam and got out of there very early. Then we went to have momos. Then we came back home together via bus and auto.<br>
+          15th August,2026:<br> We went to rito's house. Then we talked with him and enjoyed some personal time with each other after rito got out. A scary makeout.<br><strong>The month which brought us a lot closer</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEPTEMBER -->
+    <section class="page" data-month="September">
+      <div class="photo-side">
+        <div class="polaroid"><img src="september1.jpg" alt="September memory 1"></div>
+        <div class="polaroid"><img src="september2.jpg" alt="September memory 2"></div>
+        <div class="polaroid"><img src="september3.jpg" alt="September memory 3"></div>
+        <div class="polaroid"><img src="september4.jpg" alt="September memory 4"></div>
+      </div>
+      <div class="story-side">
+        <div class="story">
+          <div class="entry"><strong>September 2026</strong><p>14th September,2026:<br> A pretty good day. We met after such a long time. We met at Dominos. You felt sorry for what you had said to me the day before. I hugged you, kissed you on the cheeks. We even recorded a video of us kissing. We had the chicken dominator pizza today.<br>
+          26th September,2026:<br> We met at tuition to celebrate sir's birthday. It was a nice meeting. We had fun, talked to each other and had good food.<br><strong>Our 11th month together..</strong></p></div>
+        </div>
+      </div>
+    </section>
+    <!-- ENDING -->
+    <section class="page end-page" data-month="End">
+      <div class="end-content">
+        <div class="small">Chapter One Complete</div>
+        <h2>To Be Continued…</h2>
+        <p>
+          So, one year spent together in the blink of an eye. To be honest it still feels like yesterday
+          when I proposed to you. One of the best decisions of my life was to get you as my partner and my lover.
+          I love you alot, more than I say, more than anyone can love you ever. I adore you in a way nobody does. I wish
+          we stay together for the rest of our lives,smiling, laughing and adoring each other. I made this specially for you
+          because you deserve special. Lots of love and mmwahh's. I'll meet you tomorrow and we'll celebrate.
+        </p>
+        <div style="font-size:40px;color:#b72f4b;margin-top:28px;">♥</div>
+        <p style="margin-top:10px;font-size:18px;">Happy Anniversary,Aishika.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+<div class="photo-viewer" id="photoViewer" role="dialog" aria-modal="true" aria-label="Expanded photo" aria-hidden="true">
+  <button class="photo-viewer-close" id="photoViewerClose" type="button" aria-label="Close photo">×</button>
+  <img id="expandedPhoto" alt="">
+</div>
+<div class="controls">
+  <button class="nav-btn" id="prevBtn" onclick="previousPage()">←</button>
+  <div class="page-counter" id="counter">October · 1 / 13</div>
+  <button class="nav-btn" id="nextBtn" onclick="nextPage()">→</button>
+</div>
+<script>
+const pages = [...document.querySelectorAll(".page")];
+let current = 0;
+let bookOpened = false;
+
+function openBook(){
+  document.getElementById("cover").classList.add("hidden");
+  bookOpened = true;
+
+  const bgMusic = document.getElementById("bgMusic");
+  bgMusic.volume = 0.35;
+  bgMusic.play().catch(()=>{
+    // The browser may block playback; opening the book remains available.
+  });
+
+  updateBook();
+}
+
+function updateBook(){
+  pages.forEach((page,index)=>{
+    page.classList.toggle("flipped", index < current);
+    page.style.zIndex = pages.length - index;
+  });
+
+  const pageName = pages[current].dataset.month;
+  document.getElementById("counter").textContent =
+    `${pageName} · ${current + 1} / ${pages.length}`;
+
+  document.getElementById("prevBtn").disabled = current === 0;
+  document.getElementById("nextBtn").disabled = current === pages.length - 1;
+}
+
+function nextPage(){
+  if(!bookOpened || current >= pages.length - 1) return;
+  current++;
+  updateBook();
+}
+
+function previousPage(){
+  if(!bookOpened || current <= 0) return;
+  current--;
+  updateBook();
+}
+
+document.addEventListener("keydown",(e)=>{
+  if(!bookOpened) return;
+  if(e.key === "ArrowRight") nextPage();
+  if(e.key === "ArrowLeft") previousPage();
+});
+
+let touchStartX = 0;
+
+document.addEventListener("touchstart",(e)=>{
+  touchStartX = e.changedTouches[0].screenX;
+},{passive:true});
+
+document.addEventListener("touchend",(e)=>{
+  if(!bookOpened) return;
+  const endX = e.changedTouches[0].screenX;
+  const difference = touchStartX - endX;
+
+  if(Math.abs(difference) > 50){
+    if(difference > 0) nextPage();
+    else previousPage();
+  }
+},{passive:true});
+
+const photoViewer = document.getElementById("photoViewer");
+const expandedPhoto = document.getElementById("expandedPhoto");
+
+function closePhoto(){
+  photoViewer.classList.remove("open");
+  photoViewer.setAttribute("aria-hidden","true");
+  expandedPhoto.removeAttribute("src");
+}
+
+document.querySelectorAll(".polaroid img").forEach((photo)=>{
+  photo.addEventListener("click",()=>{
+    expandedPhoto.src = photo.currentSrc || photo.src;
+    expandedPhoto.alt = photo.alt;
+    photoViewer.classList.add("open");
+    photoViewer.setAttribute("aria-hidden","false");
+  });
+});
+
+document.getElementById("photoViewerClose").addEventListener("click",closePhoto);
+photoViewer.addEventListener("click",(event)=>{
+  if(event.target === photoViewer) closePhoto();
+});
+
+document.addEventListener("keydown",(event)=>{
+  if(event.key === "Escape" && photoViewer.classList.contains("open")) closePhoto();
+});
+
+updateBook();
+</script>
+</body>
+</html>
